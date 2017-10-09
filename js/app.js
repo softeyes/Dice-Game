@@ -11,11 +11,13 @@ GAME RULES:
 
 console.log('Dice Game Commences!');
 
-var scores, roundScore, activePlayer;
+var scores, roundScore, activePlayer, gameInSession;
 
 init();
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
+    //0. When game is in session, the value is TRUE.
+    if(gameInSession === true){
 
     //1. Random number
     var dice = Math.floor(Math.random() * 6) + 1;
@@ -33,25 +35,35 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         nextPlayer();
         // HOW TO MAKE DEACTIVATE THE HOLD BUTTON WHEN DICE 1 IS ROLLED?
     }
+}
 });
 
 document.querySelector('.btn-hold').addEventListener('click', function() {
+    
+    // Hold button only works if game is in session.
+    if(gameInSession === true){
+
     // Add CURRENT score to GLOBAL score
     scores[activePlayer] = scores[activePlayer] + roundScore
+
     // The button hold score should hold the button roll score and go into the corresponding player score
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
-    // Switch player - IF player 0 clicks HOLD, THEN switch to player 1
 
-    if (scores[activePlayer] >= 10) {
+    // Switch player - IF player 0 clicks HOLD, THEN switch to player 1
+    if (scores[activePlayer] >= 100) {
         document.getElementById('name-' + activePlayer).textContent = 'WINNER!';
         console.log('Player wins!');
         document.querySelector('.dice').style.display = 'none';
         document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
         document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+
+        // Game ends and is therefore not in session.
+        gameInSession = false;
+
     } else {
         nextPlayer();
     }
-
+    }
 });
 
 function nextPlayer() {
@@ -84,6 +96,7 @@ function init(){
     scores = [0, 0];
     roundScore = 0;
     activePlayer = 0;
+    gameInSession = true;
 
     document.querySelector('.dice').style.display = 'none';
 
@@ -94,8 +107,11 @@ function init(){
 
     document.getElementById('name-0').textContent = 'Player 1';
     document.getElementById('name-1').textContent = 'Player 2';
+
     document.querySelector('.player-0-panel').classList.remove('winner');
     document.querySelector('.player-1-panel').classList.remove('winner');
+    document.querySelector('.player-0-panel').classList.remove('active');
+    document.querySelector('.player-1-panel').classList.remove('active');
     document.querySelector('.player-0-panel').classList.add('active');
 }
 

@@ -2,7 +2,7 @@
 *** GENERAL
 **********************************************/
 
-* {
+/** {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,7 +13,7 @@
     content: "";
     display: table;
     clear: both;
-}
+}*/
 
 body {
     background: linear-gradient(to bottom right, white, #40E0D0);
@@ -27,7 +27,7 @@ body {
 
 .wrapper {
     width: 1000px;
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -51,13 +51,13 @@ body {
 **********************************************/
 
 .player-name {
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 50;
+    letter-spacing: 2px;
+    font-weight: 100;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     position: relative;
 }
 
@@ -66,26 +66,26 @@ body {
     font-size: 80px;
     font-weight: 100;
     color: #EB4D4D;
-    margin-bottom: 70px;
+    margin-bottom: 130px;
 }
 
-.active {background-color: #f7f7f7;}
-.active .player-name {font-weight: 900;}
+.active { background-color: #f7f7f7; }
+.active .player-name { font-weight: 300; }
 
-/*.active .player-name::after {
-    content: "\2217";
+.active .player-name::after {
+    content: "\2022";
     font-size: 47px;
     position: absolute;
     color: #EB4D4D;
-    top: -5px;
+    top: -7px;
     right: 10px;
     
-}*/
+}
 
 .player-current-box {
     background-color: #EB4D4D;
     color: #fff;
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
     padding: 12px;
     text-align: center;
@@ -93,14 +93,13 @@ body {
 
 .player-current-label {
     text-transform: uppercase;
-    margin-bottom: 15px;
-    font-size: 18px;
-    color: yellow;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #222;
 }
 
 .player-current-score {
-    margin-bottom: 12px;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 button {
@@ -145,4 +144,4 @@ i {
 }
 
 .winner { background-color: #f7f7f7; }
-.winner .player-name { font-weight: 900; color: #EB4D4D; }
+.winner .player-name { font-weight: 300; color: #EB4D4D; }
