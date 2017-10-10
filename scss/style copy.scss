@@ -1,0 +1,156 @@
+    /**********************************************
+*** GENERAL
+**********************************************/
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+    font-family: Dosis;
+    font-weight: 300;
+    position: relative;
+    color: #555;
+}
+
+.bigPanel {
+    width: 1000px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-style: solid;
+    background-color: #fff;
+}
+
+.player-0-panel,
+.player-1-panel {
+    width: 30%;
+    float: left;
+    height: 500px;
+    padding: 100px;
+}
+
+
+/**********************************************
+*** PLAYERS
+**********************************************/
+
+.player-name {
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 50;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.player-score {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 100;
+    color: #EB4D4D;
+    margin-bottom: 70px;
+}
+
+.active {
+    background-color: #FFFACD;
+}
+
+.active .player-name {
+    font-weight: 900;
+}
+
+
+/*.active .player-name::after {
+    content: "\2217";
+    font-size: 47px;
+    position: absolute;
+    color: #EB4D4D;
+    top: -5px;
+    right: 10px;
+    
+}*/
+
+.player-current-box {
+    background-color: #EB4D4D;
+    color: #fff;
+    width: 50%;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+}
+
+.player-current-label {
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: yellow;
+}
+
+.player-current-score {
+    margin-bottom: 12px;
+    font-size: 40px;
+}
+
+button {
+    position: absolute;
+    width: 150px;
+    left: 420px;
+    background: none;
+    font-family: Dosis;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+button:hover {
+    font-weight: 900;
+}
+
+button:hover {
+    background-color: lightBlue;
+}
+
+i {
+    color: #EB4D4D;
+    margin-right: 10px;
+    bottom: 5px;
+    font-size: 32px;
+}
+
+.btn-new {
+    top: 45px;
+}
+
+.btn-roll {
+    top: 403px;
+}
+
+.btn-hold {
+    top: 467px;
+}
+
+.dice {
+    position: absolute;
+    margin: 0 auto;
+    left: 425px;
+    bottom: 375px;
+    height: 150px;
+
+    /* Made background of dice png files transparent using the following code */
+    mix-blend-mode: multiply;
+
+    .winner {
+        background-color: #FFD700;
+    }
+
+    .winner .player-name {
+        font-weight: 900;
+        color: #EB4D4D;
+    }
+    /*# sourceMappingURL=style.css.map */

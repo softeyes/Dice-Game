@@ -1,148 +1,122 @@
-/**********************************************
-*** GENERAL
-**********************************************/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-}
-
-.clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-}
+/**********PAGE SETUP**********/
+#myCanvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0; }
 
 body {
-    background: linear-gradient(to bottom right, white, #40E0D0);
-    background-size: auto;
-    font-family: Dosis;
-    font-weight: 300;
-    height: 100vh;
-    position: relative;
-    color: #555;
-}
+  font-family: Dosis, sans-serif;
+  font-weight: 400;
+  position: relative;
+  color: #555; }
 
-.wrapper {
-    width: 1000px;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-}
+.bigPanel {
+  width: 1000px;
+  height: 700px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-style: solid;
+  background-color: #fff;
+  z-index: 1; }
 
-.player-0-panel,
 .player-1-panel {
-    width: 50%;
-    float: left;
-    height: 600px;
-    padding: 100px;
-}
+  width: 300px;
+  float: left;
+  height: 500px;
+  padding: 100px; }
 
+.player-2-panel {
+  width: 300px;
+  float: left;
+  height: 500px;
+  padding: 100px; }
 
-
-/**********************************************
-*** PLAYERS
-**********************************************/
-
+/**********PLAYERS**********/
 .player-name {
-    font-size: 50px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: 50;
-    margin-top: 20px;
-    margin-bottom: 50px;
-    position: relative;
-}
+  font-size: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 20px;
+  margin-bottom: 50px; }
 
 .player-score {
-    text-align: center;
-    font-size: 80px;
-    font-weight: 100;
-    color: #EB4D4D;
-    margin-bottom: 70px;
-}
+  text-align: center;
+  font-size: 80px;
+  font-weight: 100;
+  color: #EB4D4D;
+  margin-bottom: 70px; }
 
-.active {background-color: #f7f7f7;}
-.active .player-name {font-weight: 900;}
+.active {
+  background-color: #FFFACD; }
 
-/*.active .player-name::after {
-    content: "\2217";
-    font-size: 47px;
-    position: absolute;
-    color: #EB4D4D;
-    top: -5px;
-    right: 10px;
-    
-}*/
+.active .player-name {
+  font-weight: 900; }
 
-.player-current-box {
-    background-color: #EB4D4D;
-    color: #fff;
-    width: 50%;
-    margin: 0 auto;
-    padding: 12px;
-    text-align: center;
-}
+.player-collect-box {
+  background-color: #EB4D4D;
+  color: #fff;
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 80px;
+  padding: 14px;
+  text-align: center; }
 
-.player-current-label {
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    font-size: 18px;
-    color: yellow;
-}
+.player-collect-label {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: yellow; }
 
-.player-current-score {
-    margin-bottom: 12px;
-    font-size: 40px;
-}
+.player-collect-score {
+  margin-bottom: 12px;
+  font-size: 40px; }
 
 button {
-    position: absolute;
-    width: 150px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: none;
-    font-family: Dosis;
-    font-size: 20px;
-    text-transform: uppercase;
-    cursor: pointer;
-    font-weight: 200;
-    transition: background-color 0.1s, color 0.1s;
-}
+  position: absolute;
+  width: 150px;
+  left: 420px;
+  background: none;
+  font-family: Dosis, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 200; }
 
-button:hover {font-weight: 900;}
-button:hover {background-color: lightBlue;}
-button:hover i {margin-right: 11px;}
-button:focus {outline: none;}
+button:hover {
+  font-weight: 900;
+  background-color: lightBlue; }
 
 i {
-    color: #EB4D4D;
-    margin-right: 10px;
-    font-size: 32px;
-    line-height: 1;
-    vertical-align: text-top;
-    margin-top: 3px;
-}
+  color: #EB4D4D;
+  margin-right: 10px;
+  bottom: 5px;
+  font-size: 32px; }
 
-.btn-new { top: 45px;}
-.btn-roll { top: 403px;}
-.btn-hold { top: 467px;}
+.btn-new {
+  top: 130px; }
+
+.btn-roll {
+  top: 413px; }
+
+.btn-hold {
+  top: 477px; }
 
 .dice {
-    position: absolute;
-    left: 50%;
-    top: 178px;
-    transform: translateX(-50%);
-    height: 100px;
-    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
-}
+  position: absolute;
+  margin: 0 auto;
+  left: 425px;
+  bottom: 335px;
+  height: 150px;
+  mix-blend-mode: multiply; }
 
-.winner { background-color: #f7f7f7; }
-.winner .player-name { font-weight: 900; color: #EB4D4D; }
+.winner {
+  background-color: #FFDF00; }
+
+.winner .player-name {
+  font-weight: 900;
+  color: #EB4D4D; }
+
+/*# sourceMappingURL=style.css.map */

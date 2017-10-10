@@ -3,37 +3,57 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Dosis:100,300,600" rel="stylesheet" type="text/css">
+
+    <!-- Created three link rel attributes for fonts, icons and css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:100,300,600" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
-    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
     <title>Dice Game</title>
 </head>
 
 <body>
-    <div class="wrapper clearfix">
-        <div class="player-0-panel active">
-            <div class="player-name" id="name-0">Player 1</div>
-            <div class="player-score" id="score-0">43</div>
-            <div class="player-current-box">
-                <div class="player-current-label">Collected Points</div>
-                <div class="player-current-score" id="current-0">11</div>
-            </div>
-        </div>
-        <div class="player-1-panel">
-            <div class="player-name" id="name-1">Player 2</div>
-            <div class="player-score" id="score-1">72</div>
-            <div class="player-current-box">
-                <div class="player-current-label">Collected Points</div>
-                <div class="player-current-score" id="current-1">0</div>
-            </div>
-        </div>
-        <button class="btn-new"><i class="fa fa-plus-square"></i>New game</button>
-        <button class="btn-roll"><i class="fa fa-refresh"></i>Roll dice</button>
-        <button class="btn-hold"><i class="fa fa-hand-rock-o"></i></i>Hold</button>
-        <img src="dice-5.png" alt="Dice" class="dice">
-    </div>
-    <script src="js/app.js"></script>
-</body>
+    <!-- Created a canvas to be used as the background of the game page -->
+    <canvas id="myCanvas"></canvas>
+    <!-- Created a central panel for the game to take place -->
+    <div class="bigPanel">
 
+            <!-- Player 1 panel -->
+            <div class="player-1-panel active">
+                <div class="player-name" id="name-1">Player 1</div>
+                <div class="player-score" id="score-1">0</div>
+
+                <!-- Player 1 point collection box -->
+                <div class="player-collect-box">
+                    <div class="player-collect-label">Collected Points</div>
+                    <div class="player-collect-score" id="collect-1">11</div>
+                </div>
+            </div>
+
+            <!-- Player 2 panel -->
+            <div class="player-2-panel">
+                <div class="player-name" id="name-2">Player 2</div>
+                <div class="player-score" id="score-2">0</div>
+
+                <!-- Player 2 point collection box -->
+                <div class="player-collect-box">
+                    <div class="player-collect-label">Collected Points</div>
+                    <div class="player-collect-score" id="collect-2">0</div>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <button class="btn-new"><i class="fa fa-plus-square"></i>New game</button>
+            <button class="btn-roll"><i class="fa fa-refresh"></i>Roll die</button>
+            <button class="btn-hold"><i class="fa fa-hand-rock-o"></i></i>Add points</button>
+
+            <!-- Dice -->
+            <img src="dice-5.png" alt="Dice" class="dice">
+    </div>
+    
+    <!-- HTML script src attribute -->
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js/javascript.js"></script>
+
+</body>
 </html>
