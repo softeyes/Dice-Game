@@ -79,7 +79,7 @@ button {
   position: absolute;
   width: 150px;
   left: 420px;
-  background: none;
+  background: Seashell;
   font-family: Dosis, sans-serif;
   font-size: 20px;
   text-transform: uppercase;
@@ -109,8 +109,7 @@ i {
   margin: 0 auto;
   left: 425px;
   bottom: 335px;
-  height: 150px;
-  mix-blend-mode: multiply; }
+  height: 150px; }
 
 .winner {
   background-color: #FFDF00; }

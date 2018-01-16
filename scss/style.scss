@@ -96,7 +96,7 @@ button {
     position: absolute;
     width: 150px;
     left: 420px;
-    background: none;
+    background: Seashell;
     font-family: $font-stack;
     font-size: 20px;
     text-transform: uppercase;
@@ -135,7 +135,7 @@ i {
     height: 150px;
 
     // Made background of dice png files transparent using the following code
-    mix-blend-mode: multiply;
+    // mix-blend-mode: multiply;
 }
 
 .winner {

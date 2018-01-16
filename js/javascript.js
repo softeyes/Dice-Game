@@ -16,7 +16,7 @@ $(document).ready(function() {
     ctx.fillRect(0, 0, 1000, 700);
 
     // Roll dice variable set
-    var die = Math.floor(Math.random() * 6) + 1;
+    var dice = Math.floor(Math.random() * 6) + 1;
 
     // Initializes the function init() aka the game.
     init();
@@ -27,7 +27,7 @@ $(document).ready(function() {
         //0. When game is in session, the value is TRUE.
         if (gameInSession === true) {
 
-            //1. Random number
+            //1. Random number // Explore Math ceil and Math round
             dice = Math.floor(Math.random() * 6) + 1;
 
             //2. Display result
@@ -38,7 +38,7 @@ $(document).ready(function() {
             if (dice > 1) {
 
                 // Add score
-                collectedScore = collectedScore + die;
+                collectedScore = collectedScore + dice;
                 document.getElementById('collect-' + activePlayer).textContent = collectedScore;
             } else {
                 nextPlayer();
@@ -62,7 +62,7 @@ $(document).ready(function() {
             if (scores[activePlayer] >= 50) {
                 document.getElementById('name-' + activePlayer).innerHTML = document.getElementById('name-' + activePlayer).innerHTML + ' WINS!';
 
-                //JQUERY - die is hidden after winner is declared
+                // JQUERY - dice is hidden after winner is declared
                 $(".dice").hide();
 
                 document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
@@ -142,7 +142,8 @@ $(document).ready(function() {
 
     // var randomizedNumber = Math.round(Math.random());
     // document.getElementById('.player-' + randomizedNumber + '-panel').classList.add('active');
-    // Need to deactive the Add Points button until the die is rolled.
+    // Need to deactive the Add Points button until the dice is rolled.
     // Understand why activePlayer === 1
-    // How to make edges of die transparent but not body of die.
+    // How to make edges of dice transparent but not body of dice. - alpha channel.
+    // Math ceal
     // Improve HTML and CSS skills - learn how to use Flex.
